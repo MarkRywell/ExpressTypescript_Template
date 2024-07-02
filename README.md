@@ -17,7 +17,7 @@
 ##### Clone the repository
 ```bash
 # Clone the repository with HTTPS
-git clone https://github.com/ustpcdositeofficial/ExpressTypescript_Template.git
+git clone https://github.com/MarkRywell/ExpressTypescript_Template.git
 ```
 
 #### Installing the dependencies
