@@ -34,8 +34,12 @@ The project adheres to a well-organized structure using folders to segregate dif
 * NodeJS (LTS) / NodeJS v19
 * TypeScript
 * ExpressJS
-* MongoDB Atlas
-* Insomnia/Postman (optional)
+* Jest Unit Testing
+
+
+### Software Applications (optional)
+* MongoDB Compass - GUI for MongoDB data Visual environment
+* Insomnia/Postman - API Testing
 
 ### Global Dependencies
 * PM2 (https://pm2.keymetrics.io/)
