@@ -4,6 +4,7 @@ import { verifyJWTToken } from '@utils/auth.utils';
 const publicPaths = [
     '/auth/register',
     '/auth/login',
+    '/auth/refresh-token',
     '/auth',
     '/ws',
     '/ws/'

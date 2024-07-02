@@ -446,17 +446,16 @@ describe('Authentication', () => {
                     .post(`${route}/refresh-token`)
                     .send({refreshToken: validRefreshToken });
 
-                const { status, message, user, accessToken, refreshToken } = response.body;
+                const { status, message, user, accessToken } = response.body;
 
                 expect(status).toBe('success');
                 expect(message).toBe('Token refreshed');
                 expect(user).toBeDefined();
                 expect(accessToken).toBeDefined();
-                expect(refreshToken).toBeDefined();
                 expect(mock.spyAuthUtilsVerifyJWTToken).toHaveBeenCalledTimes(1);
                 expect(mock.spyUserModelValidateRefreshToken).toHaveBeenCalledTimes(1);
                 expect(mock.spyUtilsConvertToBasicInfo).toHaveBeenCalledTimes(1);
-                expect(mock.spyAuthUtilsGenerateJWTToken).toHaveBeenCalledTimes(2);
+                expect(mock.spyAuthUtilsGenerateJWTToken).toHaveBeenCalledTimes(1);
             });
         });
     })

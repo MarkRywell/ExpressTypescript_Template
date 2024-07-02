@@ -63,19 +63,13 @@ export default {
         };
 
         try {
-            const { userConfig }: any = verifyJWTToken(refreshToken, 'refresh')
-
+            const { userConfig }: any = verifyJWTToken(refreshToken, 'refresh');
+            
             const user = await userModel.validateRefreshToken(userConfig._id, refreshToken);
 
             if(!user) throw invalidTokenError;
 
             const userInfo = convertToBasicInfo(user);
-
-            const { token: newRefreshToken } = generateJWTToken(userInfo, 'refresh');
-
-            user.refreshToken = newRefreshToken;
-
-            await user.save();
 
             const { token: accessToken, expiryAt } = generateJWTToken(userInfo, 'access');
 
@@ -83,7 +77,6 @@ export default {
                 message: "Token refreshed",
                 user: userInfo,
                 accessToken,
-                refreshToken: newRefreshToken,
                 expiryAt
             }
         }
