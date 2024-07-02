@@ -38,8 +38,9 @@ The project adheres to a well-organized structure using folders to segregate dif
 
 
 ### Software Applications (optional)
-* MongoDB Compass - GUI for MongoDB data Visual environment
-* Insomnia/Postman - API Testing
+* MongoDB Compass - GUI for MongoDB data Visual environment (https://www.mongodb.com/try/download/compass)
+* Postman - API Testing (https://www.postman.com/downloads/)
+* Docker - Containerization and Deployment (https://www.docker.com/)
 
 ### Global Dependencies
 * PM2 (https://pm2.keymetrics.io/)
@@ -93,3 +94,18 @@ pm2 start
 # stop pm2 process with id 0
 pm2 stop 0
 ```
+
+### Docker Build Setup
+```bash
+# docker build -t <docker account>/<image name>:<version tag> .
+docker build -t markrywell/express_template:1.0 .
+```
+
+### Docker Run Image
+```bash
+# docker run -p <port>:<port> <image_name:version>
+docker run -p 3000:3000 express_template:1.0
+```
+
+### License
+This project is provided under the [MIT License](./LICENSE)
