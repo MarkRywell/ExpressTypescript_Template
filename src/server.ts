@@ -14,17 +14,13 @@ socketConnection(httpServer)
 const HOST: string = config.HOST
 const PORT: number = config.PORT
 
-httpServer.listen(PORT, () => {
-  logger.info(`Listening to port ${HOST}:${PORT}`, 'server');
+
+DBConnection((error: any) => {
+  if (!error) {
+    httpServer.listen(PORT, () => {
+      logger.info(`Listening to port ${HOST}:${PORT}`, 'server');
+    })
+  } else {
+    logger.error('\x1b[31m%s\x1b[0m', 'Database Connection Error!')
+  }
 })
-
-
-// DBConnection((error: any) => {
-//   if (!error) {
-//     httpServer.listen(PORT, () => {
-//       logger.info(`Listening to port ${HOST}:${PORT}`, 'server');
-//     })
-//   } else {
-//     logger.error('\x1b[31m%s\x1b[0m', 'Database Connection Error!')
-//   }
-// })
