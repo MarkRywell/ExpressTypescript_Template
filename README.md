@@ -1,4 +1,4 @@
-# SysDev Quiz Game Backend
+# Express Typescript Backend Template
 
 ### Tech Stack
 * NodeJS Typescript
