@@ -7,12 +7,10 @@ const config: CONFIG = {
     ENV: String(process.env.ENV),
     ACCESS_KEY: String(process.env.TOKEN_KEY),
     REFRESH_KEY: String(process.env.REFRESH_KEY),
-    MONGODB: {
-        MONGODB_USERNAME: String(process.env.MONGODB_USERNAME),
-        MONGODB_PASSWORD: String(process.env.MONGODB_PASSWORD),
-        MONGODB_APP: String(process.env.MONGODB_APP),
-        MONGODB_URI: String(process.env.MONGODB_URI),
-        MONGODB_IP: String(process.env.MONGODB_IP)
+    MYSQL: {
+        MYSQL_DATABASE: String(process.env.MYSQL_DATABASE),
+        MYSQL_USERNAME: String(process.env.MYSQL_USERNAME),
+        MYSQL_PASSWORD: String(process.env.MYSQL_PASSWORD)
     }
 }
 

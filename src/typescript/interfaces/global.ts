@@ -1,9 +1,7 @@
-export interface MONGODB {
-    MONGODB_USERNAME: string;
-    MONGODB_PASSWORD: string;
-    MONGODB_APP: string;
-    MONGODB_URI: string;
-    MONGODB_IP: string;
+export interface MYSQL {
+    MYSQL_DATABASE: string;
+    MYSQL_USERNAME: string;
+    MYSQL_PASSWORD: string;
 }
 
 export interface CONFIG {
@@ -12,5 +10,5 @@ export interface CONFIG {
     ENV: string;
     ACCESS_KEY: string;
     REFRESH_KEY: string;
-    MONGODB: MONGODB;
+    MYSQL: MYSQL
 }

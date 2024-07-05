@@ -1,11 +1,10 @@
-import { Types } from 'mongoose';
+import { Model } from 'sequelize';
 
-export interface BasicModel {
-    _id?: Types.ObjectId;
+export interface BasicModel extends Model {
+    _id: string;
     createdAt?: Date;
     updatedAt?: Date;
 }
-
 export interface User extends BasicModel {
     username: string;
     password: string;
@@ -16,7 +15,7 @@ export interface User extends BasicModel {
 }
 
 export interface Address extends BasicModel {
-    userId: Types.ObjectId;
+    userId: string;
     street: string;
     city: string;
     state?: string;
