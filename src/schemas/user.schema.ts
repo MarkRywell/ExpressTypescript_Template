@@ -1,15 +1,38 @@
-import { InferSchemaType, Schema, model } from "mongoose";
-import { User as UserType } from "@interfaces/schema.types";
+import { DataTypes } from "sequelize";
+import sequelize from "@lib/database";
+import { User } from "@interfaces/schema.types";
 
-const UserSchema = new Schema<UserType>({
-    username: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    role: { type: String, required: true },
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
-    refreshToken: { type: String }
-})
+const UserSchema = sequelize.define<User>('users', {
+    _id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true
+    },
+    username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    firstName: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    lastName: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    role: {
+        type: DataTypes.ENUM('user', 'admin'),
+        allowNull: false
+    },
+    refreshToken: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+});
 
-type User = InferSchemaType<typeof UserSchema>;
-
-export default model<User>('User', UserSchema);
+export default UserSchema;
