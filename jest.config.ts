@@ -20,8 +20,6 @@ export default async (): Promise<Config> => {
           '^.+\\.ts$': 'ts-jest',
       },
       moduleFileExtensions: ['ts', 'js'],
-      globalSetup: './src/test/config/setup.ts',
-      globalTeardown: './src/test/config/teardown.ts',
       setupFiles: ['./src/test/config/global.ts'],
       roots: ['<rootDir>/src'],
       moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths,
