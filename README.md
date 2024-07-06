@@ -1,7 +1,7 @@
 # Express Typescript Backend Template
 
 Express & TypeScript Backend Template
-This project provides a boilerplate for building backend applications using Node.js, Express.js, and MongoDB with TypeScript for type safety and improved maintainability.
+This project provides a boilerplate for building backend applications using Node.js, Express.js, and MySQL with TypeScript for type safety and improved maintainability.
 
 The template includes pre-configured dependencies, a basic project structure following the MVC design pattern (Model-View-Controller), and scripts for development and production builds.
 
@@ -21,31 +21,41 @@ The project adheres to a well-organized structure using folders to segregate dif
   
 * src/controllers: This directory stores the logic for handling incoming requests and interacting with models and services. Controller functions handle user interactions and business logic.
   
-* src/schemas: This folder might contain Mongoose schemas (Using Mongoose for MongoDB interaction).
+* src/schemas: This folder might contain MySQL schemas (Using Sequelize for MySQL Interaction).
   
 * src/routes: This directory houses route definitions that map incoming API requests to specific controller functions. Routes define the API endpoints and how they are handled.
+
+### Developer Notes
+* This Backend Template with MySQL as Database has preconfigured unit tests
+* 
 
 ### Tech Stack
 * NodeJS Typescript
 * ExpressJS Backend Framework
-* MongoDB NoSQL Database
+* MySQL Database
 
 ### Dependencies
 * NodeJS (LTS) / NodeJS v19
 * TypeScript
 * ExpressJS
-* Jest Unit Testing
+* MySQL Database
 
-
-### Software Applications (optional)
-* MongoDB Compass - GUI for MongoDB data Visual environment (https://www.mongodb.com/try/download/compass)
+### Software Applications 
+* **XAMPP** - Provides a local web server environment for testing and development
 * Postman - API Testing (https://www.postman.com/downloads/)
-* Docker - Containerization and Deployment (https://www.docker.com/)
+
 
 ### Global Dependencies
 * PM2 (https://pm2.keymetrics.io/)
 
+
 ### Setup
+
+#### Initial Setup
+
+#### 1. Run XAMPP Control Panel and start Apache and MySQL module
+
+#### Project Setup
 
 ##### Clone the repository
 ```bash
@@ -93,18 +103,6 @@ pm2 start
 ```bash
 # stop pm2 process with id 0
 pm2 stop 0
-```
-
-### Docker Build Setup
-```bash
-# docker build -t <docker account>/<image name>:<version tag> .
-docker build -t markrywell/express_template:1.0 .
-```
-
-### Docker Run Image
-```bash
-# docker run -p <port>:<port> <image_name:version>
-docker run -p 3000:3000 express_template:1.0
 ```
 
 ### License
