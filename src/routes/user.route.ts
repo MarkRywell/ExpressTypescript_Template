@@ -21,4 +21,17 @@ router.post('/add-address',
     catchWrap(userController.addAddressToUser)
 )
 
+router.post('/add-to-sheets', 
+    validateChain([ 
+        body('name', 'Name is required')
+            .notEmpty(),
+        body('email', 'Email is required')
+            .notEmpty()
+            .isEmail(),
+        body('phone', 'Phone is required')
+            .notEmpty()
+    ]), 
+    catchWrap(userController.addToSheets)
+)
+
 export default router;
