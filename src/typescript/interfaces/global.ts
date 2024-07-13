@@ -6,6 +6,11 @@ export interface MONGODB {
     MONGODB_IP: string;
 }
 
+export interface GOOGLE {
+    GOOGLE_EMAIL: string;
+    GOOGLE_PRIVATE_KEY: string;
+}
+
 export interface CONFIG {
     HOST: string;
     PORT: number;
@@ -13,4 +18,5 @@ export interface CONFIG {
     ACCESS_KEY: string;
     REFRESH_KEY: string;
     MONGODB: MONGODB;
+    GOOGLE: GOOGLE;
 }

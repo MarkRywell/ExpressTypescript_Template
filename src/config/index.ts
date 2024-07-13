@@ -13,6 +13,10 @@ const config: CONFIG = {
         MONGODB_APP: String(process.env.MONGODB_APP),
         MONGODB_URI: String(process.env.MONGODB_URI),
         MONGODB_IP: String(process.env.MONGODB_IP)
+    },
+    GOOGLE: {
+        GOOGLE_EMAIL: String(process.env.GOOGLE_EMAIL),
+        GOOGLE_PRIVATE_KEY: String(process.env.GOOGLE_PRIVATE_KEY)
     }
 }
 
