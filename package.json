@@ -39,6 +39,8 @@
     "express": "^4.17.1",
     "express-rate-limit": "^7.3.0",
     "express-validator": "^7.0.1",
+    "google-auth-library": "^9.11.0",
+    "google-spreadsheet": "^4.1.2",
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
     "module-alias": "^2.2.3",
