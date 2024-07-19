@@ -15,16 +15,10 @@ let refreshToken: string;
 let validRefreshToken: string;
 
 beforeAll(async () => {
-    await dbConnection()
-
     user = await User.create({ username: 'markG', password: 'password123', firstName: faker.person.firstName, lastName: faker.person.lastName, role: 'user'})
 
     accessToken = authUtils.generateJWTToken(userUtils.convertToBasicInfo(user), 'access').token;
     refreshToken = authUtils.generateJWTToken(userUtils.convertToBasicInfo(user), 'refresh').token;
-})
-
-afterAll(async () => {
-    await closeConnection()
 })
 
 const route = '/auth'

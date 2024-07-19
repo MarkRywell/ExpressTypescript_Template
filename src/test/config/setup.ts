@@ -1,5 +1,9 @@
-import { dbConnection } from '../mocks/database/mockdb'
+import { closeConnection, dbConnection } from '../mocks/database/mockdb'
 
-export default async () => {
-  dbConnection()
-}
+beforeAll(async () => {
+  await dbConnection()
+})
+
+afterAll(async () => {
+  await closeConnection()
+})
