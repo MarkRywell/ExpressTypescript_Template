@@ -7,7 +7,9 @@ const UserSchema = new Schema<UserType>({
     role: { type: String, required: true },
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    refreshToken: { type: String }
+    refreshToken: { type: String },
+    followers: [{ type: Schema.Types.ObjectId, ref: 'users' }],
+    following: [{ type: Schema.Types.ObjectId, ref: 'users' }]
 })
 
 type User = InferSchemaType<typeof UserSchema>;
