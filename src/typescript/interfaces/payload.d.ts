@@ -14,3 +14,14 @@ interface AddressPayload {
     zip: string;
     country?: string;
 }
+
+interface PostPayload {
+    userId: string;
+    title: string;
+    content: string;
+}
+
+interface CommentPayload {
+    userId: string;
+    content: string;
+}

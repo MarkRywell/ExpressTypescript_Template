@@ -13,6 +13,8 @@ export interface User extends BasicModel {
     lastName: string;
     role: 'user' | 'admin';
     refreshToken: string;
+    followers?: Array<Types.ObjectId>;
+    following?: Array<Types.ObjectId>;
 }
 
 export interface Address extends BasicModel {
@@ -22,4 +24,16 @@ export interface Address extends BasicModel {
     state?: string;
     zip: string;
     country?: string;
+}
+
+export interface Comment extends BasicModel{
+    userId: Types.ObjectId;
+    content: string;
+}
+
+export interface Post extends BasicModel {
+    userId: Types.ObjectId;
+    title: string;
+    content: string;
+    comments?: Array<Types.ObjectId>;
 }
